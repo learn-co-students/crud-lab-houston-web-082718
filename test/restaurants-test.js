@@ -122,7 +122,7 @@ describe('Restaurant Component with Redux', () => {
 
     const wrapper = mount(<Provider store={store}><App /></Provider>)
 
-    let deleteButton = wrapper.find('button').first();
+    let deleteButton = wrapper.find('#delete-restaurant-button').first();
 
     deleteButton.simulate('click',  { preventDefault() {} });
 
@@ -148,7 +148,7 @@ describe('Restaurant Component with Redux', () => {
 
     wrapper.update()
 
-    let deleteButton = wrapper.find('button').first();
+    let deleteButton = wrapper.find('#delete-restaurant-button').first();
 
     deleteButton.simulate('click');
 
@@ -158,7 +158,7 @@ describe('Restaurant Component with Redux', () => {
     input.simulate('change', { target: { value: 'Song' } });
     form.simulate('submit',  { preventDefault() {} });
 
-    deleteButton = wrapper.find('button').last();
+    deleteButton = wrapper.find('#delete-restaurant-button').last();
 
     deleteButton.simulate('click');
 
